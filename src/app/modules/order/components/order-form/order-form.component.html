@@ -1,0 +1,31 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+  <p-dropdown
+    formControlName="userId"
+    [options]="users"
+    placeholder="Select User"
+    optionLabel="name"
+  ></p-dropdown>
+
+  <p-dropdown
+    formControlName="productId"
+    [options]="products"
+    placeholder="Select Product"
+    optionLabel="name"
+  ></p-dropdown>
+
+  <p-inputNumber
+    formControlName="quantity"
+    placeholder="Quantity"
+    [min]="1"
+    [max]="100"
+  ></p-inputNumber>
+
+  <p-inputNumber
+    formControlName="unitPrice"
+    placeholder="Unit Price"
+    mode="currency"
+    currency="USD"
+  ></p-inputNumber>
+
+  <p-button label="Submit" type="submit"></p-button>
+</form>
